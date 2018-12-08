@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SporSight</h1>
+        <h1>SporSight Athlete Technique Analysis</h1>
       </div>
     );
   }

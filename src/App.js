@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Landing from './Components/Landing';
+import Home from './Components/Home';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>SporSight Athlete Technique Analysis</h1>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/home" component={Home} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App;

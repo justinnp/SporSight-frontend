@@ -19,7 +19,7 @@ class Landing extends Component {
 
     render() {
         return (
-            <div className = "background">
+            <div>
                 <Modal style={{top: "20%"}} isOpen={this.state.modal}>
                     <div style={cloudStyle}>
                         <ModalHeader>

@@ -1,10 +1,16 @@
 body {
     padding-top: 56px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.sticky-offset {
-    top: 56px;
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 3vh;
+    color: black;
 }
+
+.modal-backdrop { opacity: .1 !important; }
 
 #body-row {
     margin-left:0;
@@ -12,7 +18,7 @@ body {
 }
 #sidebar-container {
     min-height: 100vh;   
-    background-color: #333;
+    background-color: #DBD6D6;
     padding: 0;
 }
 
@@ -41,15 +47,15 @@ body {
 
 /* Separators */
 .sidebar-separator-title {
-    background-color: #333;
+    background-color: #3479F6;
     height: 35px;
 }
 .sidebar-separator {
-    background-color: #333;
+    background-color: #3479F6;
     height: 25px;
 }
 .logo-separator {
-    background-color: #333;    
+    background-color: #3479F6;    
     height: 60px;
 }
 
@@ -68,4 +74,10 @@ body {
   display: inline;
   text-align: right;
   padding-left: 10px;
+}
+
+.imgLogo {
+    content: url("../images/SporSight.png");
+    background-color: transparent;
+    border: none;
 }

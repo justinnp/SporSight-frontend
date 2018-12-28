@@ -37,7 +37,7 @@ class NavDropdown extends React.Component {
     return (
       <li className="nav-item dropdown">
         <a
-          className="nav-link dropdown-toggle "
+          className="nav-link dropdown-toggle"
           href="/"
           id="navbarDropdown"
           role="button"
@@ -58,7 +58,7 @@ class NavDropdown extends React.Component {
   }
 }
 
-class Home extends React.Component {
+class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -105,7 +105,7 @@ class Home extends React.Component {
                 Payment
               </a>
               <div className="dropdown-divider" />
-              <a className="dropdown-item" href="/">
+              <a className="dropdown-item" href="/home">
                 Logout
               </a>
             </NavDropdown>
@@ -116,4 +116,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Navbar;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container } from 'reactstrap';
 import cloudImage from '../images/skyWrap.jpg';
-import image from '../images/landing.jpg';
+import image from '../images/landing2.webp';
 
 var cloudStyle = {
     backgroundImage: `url(${cloudImage})`,
@@ -23,7 +23,7 @@ class Landing extends Component {
                 <Modal style={{top: "20%"}} isOpen={this.state.modal}>
                     <div style={cloudStyle}>
                         <ModalHeader>
-                            <span style={{fontFamily: "Arial, Helvetica, sans-serif", fontSize: "40px", fontWeight: "bold"}}>
+                            <span class="logo" style={{fontSize: "45px"}}>
                             SporSight
                             </span>
                         </ModalHeader>

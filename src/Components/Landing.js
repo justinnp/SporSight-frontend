@@ -29,10 +29,10 @@ class Landing extends Component {
                         </ModalHeader>
                     </div>
                     <ModalBody>
-                        <p style={{fontSize: "20px"}}>
+                        <p style={{fontSize: "20px", color: "black"}}>
                         Welcome to SporSight's Athlete Technique Analysis!
                         </p>
-                        <p style={{fontSize: "15px"}}>
+                        <p style={{fontSize: "15px", color: "black"}}>
                         Please login or create an account.
                         </p>
                     </ModalBody>

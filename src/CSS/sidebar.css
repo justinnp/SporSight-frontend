@@ -41,7 +41,13 @@ body {
 /* Menu item*/
 #sidebar-container .list-group a {
     height: 50px;
-    color: white;
+    color: black;
+}
+
+#sidebar-container .list-group a:hover {
+    height: 50px;
+    color: #3479F6;
+    cursor: pointer;
 }
 
 /* Submenu item*/
@@ -90,4 +96,9 @@ body {
     border: none;
     height: 60%;
     width: 50%;
+}
+
+.brandLogo:hover {
+    cursor: pointer;
+    color: #3479F6;
 }

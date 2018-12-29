@@ -14,10 +14,6 @@ class Sidebar extends Component {
             collapseVideos: false,
             redirect: false
         }
-        this.toggleProfile = this.toggleProfile.bind(this);
-        this.toggleSporSight = this.toggleSporSight.bind(this);
-        this.toggleTeam = this.toggleTeam.bind(this);
-        this.toggleVideos = this.toggleVideos.bind(this);
     }
 
     setRedirect = (param) => {
@@ -30,7 +26,7 @@ class Sidebar extends Component {
         if (this.state.redirect) {
           return <Redirect to='/privacy_policy' />
         }
-      }
+    }
 
     toggleProfile = () => {
         this.setState({
@@ -65,19 +61,18 @@ class Sidebar extends Component {
                         onClick={this.toggleProfile} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
                         color="primary"
-                        // style={{backgroundColor: "DBD6D6", color:"white"}}
                     >
                     <FaUser className="mr-4"/> Profile <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseProfile}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaRegCreditCard className="mr-4"/>Subscriptions
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaUserEdit className="mr-4"/>Account Settings
                                 </a>
                             </li>
@@ -94,12 +89,12 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseTeam}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaHome className="mr-4"/> Dashboard
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaClipboardList className="mr-4"/> Roster
                                 </a>
                             </li>
@@ -116,12 +111,12 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseVideos}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaUpload className="mr-4"/> Upload Video
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaArchive className="mr-4"/> Video Archive
                                 </a>
                             </li>
@@ -141,12 +136,12 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseSporSight}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaInfoCircle className="mr-4"/> About Us
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaRegComment className="mr-4"/> Contact Us
                                 </a>
                             </li>

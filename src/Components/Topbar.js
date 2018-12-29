@@ -1,15 +1,29 @@
 import React, {Component} from 'react'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
 import {FaSearch} from 'react-icons/fa';
+import {Redirect} from 'react-router-dom';
 
 class Topbar extends Component {
     constructor(props){
         super(props);
         this.state = {
             open: false,
-            name: 'Justin'
+            name: 'Justin',
+            redirectHome: false
         }
         this.toggleDropdown = this.toggleDropdown.bind(this);
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirectHome: true
+        })
+    }
+
+    renderHome = () => {
+        if (this.state.redirectHome) {
+          return <Redirect to='/home' />
+        }
     }
 
     toggleDropdown = () => {
@@ -31,8 +45,9 @@ class Topbar extends Component {
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="/home">
-                    <span class="logo stretch" style={{fontSize:"2.1rem"}} >
+                <a class="navbar-brand" onClick={this.setRedirect}>
+                    {this.renderHome()}
+                    <span class="logo stretch brandLogo" style={{fontSize:"2.1rem"}} >
                         SporSight
                     </span>
                 </a>

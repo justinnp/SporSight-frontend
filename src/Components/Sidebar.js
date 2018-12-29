@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Collapse} from 'reactstrap';
 import {FaCaretDown, FaUserEdit, FaFutbol, FaRegCreditCard, FaUser, FaUpload, FaVideo, FaClipboardList, FaArchive, FaHome, FaUsers, FaInfoCircle, FaRegComment, FaRegCopyright} from 'react-icons/fa';
+import {Redirect} from 'react-router-dom';
 import '../CSS/sidebar.css';
 
 class Sidebar extends Component {
@@ -10,12 +11,21 @@ class Sidebar extends Component {
             collapseProfile: false,
             collapseTeam: false,
             collapseSporSight: false,
-            collapseVideos: false
+            collapseVideos: false,
+            redirect: false
         }
-        this.toggleProfile = this.toggleProfile.bind(this);
-        this.toggleSporSight = this.toggleSporSight.bind(this);
-        this.toggleTeam = this.toggleTeam.bind(this);
-        this.toggleVideos = this.toggleVideos.bind(this);
+    }
+
+    setRedirect = (param) => {
+        this.setState({
+          [param]: true
+        })
+    }
+
+    renderPrivacyPolicyRedirect = (param) => {
+        if (this.state.redirect) {
+          return <Redirect to='/privacy_policy' />
+        }
     }
 
     toggleProfile = () => {
@@ -41,7 +51,7 @@ class Sidebar extends Component {
 
     render() {
         return (
-            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
                 <ul class="list-group sticky-top sticky-offset">
                     <li class="list-group-item text-muted d-flex align-items-center menu-collapsed" style={{backgroundColor: "#BFBDBD"}}>
                         <span style={{color: "white"}}>Main Menu</span>
@@ -51,19 +61,18 @@ class Sidebar extends Component {
                         onClick={this.toggleProfile} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
                         color="primary"
-                        // style={{backgroundColor: "DBD6D6", color:"white"}}
                     >
                     <FaUser className="mr-4"/> Profile <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseProfile}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaRegCreditCard className="mr-4"/>Subscriptions
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaUserEdit className="mr-4"/>Account Settings
                                 </a>
                             </li>
@@ -80,12 +89,12 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseTeam}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaHome className="mr-4"/> Dashboard
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaClipboardList className="mr-4"/> Roster
                                 </a>
                             </li>
@@ -102,12 +111,12 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseVideos}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaUpload className="mr-4"/> Upload Video
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaArchive className="mr-4"/> Video Archive
                                 </a>
                             </li>
@@ -127,17 +136,18 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseSporSight}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaInfoCircle className="mr-4"/> About Us
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a style={{color:"black"}}>
+                                <a>
                                     <FaRegComment className="mr-4"/> Contact Us
                                 </a>
                             </li>
                             <li>
-                                <a style={{color:"black"}}>
+                                {this.renderPrivacyPolicyRedirect()}
+                                <a onClick={() => this.setRedirect("redirect")}>
                                     <FaRegCopyright className="mr-4"/>   Privacy Policy
                                 </a>
                             </li>

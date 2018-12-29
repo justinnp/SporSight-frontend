@@ -1,13 +1,20 @@
 body {
-    padding-top: 56px;
     font-family: 'Poppins', sans-serif;
 }
 
 .logo {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 3vh;
+    /* font-size: 3vh; */
     color: black;
+}
+
+.stretch {
+    font-stretch: expanded;
+}
+
+.displayArea {
+    padding-top: 80px;
 }
 
 .modal-backdrop { opacity: .1 !important; }
@@ -20,6 +27,7 @@ body {
     min-height: 100vh;   
     background-color: #DBD6D6;
     padding: 0;
+    padding-top: 60px;
 }
 
 /* Sidebar sizes when expanded and expanded */
@@ -80,4 +88,6 @@ body {
     content: url("../images/SporSight.png");
     background-color: transparent;
     border: none;
+    height: 60%;
+    width: 50%;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Collapse} from 'reactstrap';
 import {FaCaretDown, FaUserEdit, FaFutbol, FaRegCreditCard, FaUser, FaUpload, FaVideo, FaClipboardList, FaArchive, FaHome, FaUsers, FaInfoCircle, FaRegComment, FaRegCopyright} from 'react-icons/fa';
+import {Redirect} from 'react-router-dom';
 import '../CSS/sidebar.css';
 
 class Sidebar extends Component {
@@ -10,13 +11,26 @@ class Sidebar extends Component {
             collapseProfile: false,
             collapseTeam: false,
             collapseSporSight: false,
-            collapseVideos: false
+            collapseVideos: false,
+            redirect: false
         }
         this.toggleProfile = this.toggleProfile.bind(this);
         this.toggleSporSight = this.toggleSporSight.bind(this);
         this.toggleTeam = this.toggleTeam.bind(this);
         this.toggleVideos = this.toggleVideos.bind(this);
     }
+
+    setRedirect = (param) => {
+        this.setState({
+          [param]: true
+        })
+    }
+
+    renderPrivacyPolicyRedirect = (param) => {
+        if (this.state.redirect) {
+          return <Redirect to='/privacy_policy' />
+        }
+      }
 
     toggleProfile = () => {
         this.setState({
@@ -41,7 +55,7 @@ class Sidebar extends Component {
 
     render() {
         return (
-            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
                 <ul class="list-group sticky-top sticky-offset">
                     <li class="list-group-item text-muted d-flex align-items-center menu-collapsed" style={{backgroundColor: "#BFBDBD"}}>
                         <span style={{color: "white"}}>Main Menu</span>
@@ -137,7 +151,8 @@ class Sidebar extends Component {
                                 </a>
                             </li>
                             <li>
-                                <a style={{color:"black"}}>
+                                {this.renderPrivacyPolicyRedirect()}
+                                <a onClick={() => this.setRedirect("redirect")}>
                                     <FaRegCopyright className="mr-4"/>   Privacy Policy
                                 </a>
                             </li>

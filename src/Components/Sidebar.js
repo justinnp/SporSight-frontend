@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button, Collapse} from 'reactstrap';
-import {FaUserEdit, FaFutbol, FaRegCreditCard, FaUser, FaUpload, FaVideo, FaClipboardList, FaArchive, FaHome, FaUsers, FaInfoCircle, FaRegComment, FaRegCopyright} from 'react-icons/fa';
+import {FaCaretDown, FaUserEdit, FaFutbol, FaRegCreditCard, FaUser, FaUpload, FaVideo, FaClipboardList, FaArchive, FaHome, FaUsers, FaInfoCircle, FaRegComment, FaRegCopyright} from 'react-icons/fa';
 import '../CSS/sidebar.css';
 
 class Sidebar extends Component {
@@ -50,9 +50,10 @@ class Sidebar extends Component {
                         className="rounded-0 text-left"
                         onClick={this.toggleProfile} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                        style={{backgroundColor: "DBD6D6", color:"white"}}
+                        color="primary"
+                        // style={{backgroundColor: "DBD6D6", color:"white"}}
                     >
-                    <FaUser className="mr-4"/> Profile 
+                    <FaUser className="mr-4"/> Profile <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseProfile}>
                         <ul style={{listStyle: "none"}}>
@@ -72,9 +73,9 @@ class Sidebar extends Component {
                         className="rounded-0 text-left"
                         onClick={this.toggleTeam} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                        style={{backgroundColor: "DBD6D6", color:"white"}}
+                        color="primary"
                     >
-                    <FaUsers className="mr-4"/> Team 
+                    <FaUsers className="mr-4"/> Team <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseTeam}>
                         <ul style={{listStyle: "none"}}>
@@ -94,9 +95,9 @@ class Sidebar extends Component {
                         className="rounded-0 text-left"
                         onClick={this.toggleVideos} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                        style={{backgroundColor: "DBD6D6", color:"white"}}
+                        color="primary"
                     >
-                    <FaVideo className="mr-4"/> Videos 
+                    <FaVideo className="mr-4"/> Videos <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseVideos}>
                         <ul style={{listStyle: "none"}}>
@@ -119,9 +120,9 @@ class Sidebar extends Component {
                         className="rounded-0 text-left"
                         onClick={this.toggleSporSight} 
                         class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                        style={{backgroundColor: "DBD6D6", color:"white"}}
+                        color="primary"
                     >
-                    <FaFutbol className="mr-4"/>SporSight 
+                    <FaFutbol className="mr-4"/>SporSight <FaCaretDown className="float-right"/>
                     </Button>
                     <Collapse isOpen={this.state.collapseSporSight}>
                         <ul style={{listStyle: "none"}}>

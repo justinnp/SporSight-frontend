@@ -1,10 +1,11 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './Components/Landing';
-import Home from './Components/Home';
-import Topbar from './Components/Topbar';
-import Sidebar from './Components/Sidebar';
-import PrivacyPolicy from './Components/PrivacyPolicy';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Landing from "./Components/Landing";
+import Home from "./Components/Home";
+import Topbar from "./Components/Topbar";
+import Sidebar from "./Components/Sidebar";
+import PrivacyPolicy from "./Components/PrivacyPolicy";
+import ContactUs from "./Components/ContactUs";
 
 const App = () => {
   return (
@@ -16,9 +17,10 @@ const App = () => {
         <Route path="/topbar" component={Topbar} />
         <Route path="/sidebar" component={Sidebar} />
         <Route path="/privacy_policy" component={PrivacyPolicy} />
+        <Route path="/contact_us" component={ContactUs} />
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default App;

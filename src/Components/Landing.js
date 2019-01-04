@@ -37,8 +37,8 @@ class Landing extends Component {
                         </p>
                     </ModalBody>
                     <ModalFooter>
-                        <Button outline color="primary" onClick={this.toggle}>Login</Button>{' '}
-                        <Button color="link" onClick={this.toggle}>Create an Account</Button>
+                        <a href="/login/?p=B2C_1_login" class="btn btn-outline-primary mr-2" role="button">Login</a>
+                        <a href="/login/?p=B2C_1_register">Create an Account</a>
                     </ModalFooter>
                 </Modal>
             </div>

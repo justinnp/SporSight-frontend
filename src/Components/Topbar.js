@@ -8,7 +8,7 @@ class Topbar extends Component {
         super(props);
         this.state = {
             open: false,
-            name: 'Justin',
+            name: 'Justin Powell',
             redirectHome: false
         }
         this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -52,7 +52,7 @@ class Topbar extends Component {
                     </span>
                 </a>
                 <InputGroup className="w-50 mx-auto">
-                    <Input placeholder="Search for something!"/>
+                    <Input placeholder="Search for players or videos..."/>
                     <InputGroupAddon addonType="append">
                     <Button color="primary"> <FaSearch /> </Button>
                     </InputGroupAddon>

@@ -12,7 +12,8 @@ class Sidebar extends Component {
             collapseTeam: false,
             collapseSporSight: false,
             collapseVideos: false,
-            redirect: false
+            redirectPrivacy: false,
+            redirectRoster: false
         }
     }
 
@@ -22,9 +23,15 @@ class Sidebar extends Component {
         })
     }
 
-    renderPrivacyPolicyRedirect = (param) => {
-        if (this.state.redirect) {
+    renderPrivacyPolicyRedirect = () => {
+        if (this.state.redirectPrivacy) {
           return <Redirect to='/privacy_policy' />
+        }
+    }
+
+    renderRosterRedirect = () => {
+        if (this.state.redirectRoster) {
+          return <Redirect to='/roster' />
         }
     }
 
@@ -94,7 +101,8 @@ class Sidebar extends Component {
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a>
+                                {this.renderRosterRedirect()}
+                                <a onClick={() => this.setRedirect("redirectRoster")}>
                                     <FaClipboardList className="mr-4"/> Roster
                                 </a>
                             </li>
@@ -147,7 +155,7 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 {this.renderPrivacyPolicyRedirect()}
-                                <a onClick={() => this.setRedirect("redirect")}>
+                                <a onClick={() => this.setRedirect("redirectPrivacy")}>
                                     <FaRegCopyright className="mr-4"/>   Privacy Policy
                                 </a>
                             </li>

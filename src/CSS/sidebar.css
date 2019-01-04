@@ -90,12 +90,33 @@ body {
   padding-left: 10px;
 }
 
-.imgLogo {
+.sporSightLogo {
     content: url("../images/SporSight.png");
     background-color: transparent;
     border: none;
     height: 60%;
     width: 50%;
+}
+
+.rosterImage {
+    content: url("../images/roster.png");
+    background-color: transparent;
+    border: none;
+    width: 95%
+}
+
+.scheduleImage {
+    content: url("../images/schedule.png");
+    background-color: transparent;
+    border: none;
+    width: 95%
+}
+
+.schedule2Image {
+    content: url("../images/schedule2.png");
+    background-color: transparent;
+    border: none;
+    width: 95%
 }
 
 .brandLogo:hover {

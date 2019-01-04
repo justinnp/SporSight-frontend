@@ -13,7 +13,8 @@ class Sidebar extends Component {
             collapseSporSight: false,
             collapseVideos: false,
             redirectPrivacy: false,
-            redirectRoster: false
+            redirectRoster: false,
+            redirectContact: false
         }
     }
 
@@ -28,6 +29,12 @@ class Sidebar extends Component {
           return <Redirect to='/privacy_policy' />
         }
     }
+
+    renderContactUsRedirect = param => {
+        if (this.state.redirectContact) {
+          return <Redirect to="/contact_us" />
+        }
+    };
 
     renderRosterRedirect = () => {
         if (this.state.redirectRoster) {
@@ -149,7 +156,8 @@ class Sidebar extends Component {
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a>
+                                {this.renderContactUsRedirect()}
+                                <a onClick={() => this.setRedirect("redirectContact")}>
                                     <FaRegComment className="mr-4"/> Contact Us
                                 </a>
                             </li>

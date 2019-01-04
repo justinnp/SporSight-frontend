@@ -14,8 +14,12 @@ class Home extends Component {
               <div className="position-fixed">
                 <Sidebar />
               </div>
-              <div class="col offset-md-2">
-            </div>
+              <div class="col offset-md-2 displayArea">
+                <h1 className="mb-4">Welcome, Coach Justin!</h1>
+                <h4>2018 Schedule</h4>
+                <img class="schedule2Image"/>
+                <img class="scheduleImage"/>
+              </div>
           </Row>
       </div>
     );

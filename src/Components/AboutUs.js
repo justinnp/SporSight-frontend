@@ -16,6 +16,9 @@ class AboutUs extends Component {
           </div>
           <div class="col offset-md-2 displayArea">
             <h2>About Us</h2>
+            <p></p>
+            <p>SporSight's mission is to provide coaches and players with unique analytical data and feedback.<br />
+            This helps the player improve their form and technique while promoting a stronger, more well-rounded athlete </p>
           </div>
         </Row>
       </div>

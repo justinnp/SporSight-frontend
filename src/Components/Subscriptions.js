@@ -3,7 +3,7 @@ import { Row } from "reactstrap";
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 
-class ContactUs extends Component {
+class Subscriptions extends Component {
   render() {
     return (
       <div>
@@ -15,10 +15,7 @@ class ContactUs extends Component {
             <Sidebar />
           </div>
           <div class="col offset-md-2 displayArea">
-            <h2>Contact Us</h2>
-            <p>
-              <a href="mailto:sporsight@gmail.com">sporsight@gmail.com</a>
-            </p>
+            <h2>Payment and Subscriptions</h2>
           </div>
         </Row>
       </div>
@@ -26,4 +23,4 @@ class ContactUs extends Component {
   }
 }
 
-export default ContactUs;
+export default Subscriptions;

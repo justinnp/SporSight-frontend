@@ -14,9 +14,16 @@ class Sidebar extends Component {
             collapseVideos: false,
             redirectPrivacy: false,
             redirectRoster: false,
-            redirectContact: false
+            redirectContact: false,
+            redirectUpload: false,
+            redirectAccountSettings: false,
+            redirectArchive: false,
+            redirectSubscriptions: false,
+            redirectAboutUs: false
         }
     }
+
+    // REFACTOR THE BELOW, LOOK AT LITERALS FOR INTERPOLATING INTO THIS.STATE
 
     setRedirect = (param) => {
         this.setState({
@@ -24,9 +31,39 @@ class Sidebar extends Component {
         })
     }
 
+    renderSubscriptionsRedirect = () => {
+        if (this.state.redirectSubscriptions) {
+          return <Redirect to='/subscriptions' />
+        }
+    }
+
+    renderAboutUsRedirect = () => {
+        if (this.state.redirectAboutUs) {
+          return <Redirect to='/about_us' />
+        }
+    }
+
+    renderAcountSettingsRedirect = () => {
+        if (this.state.redirectAccountSettings) {
+          return <Redirect to='/account_settings' />
+        }
+    }
+
+    renderVideoArchiveRedirect = () => {
+        if (this.state.redirectArchive) {
+          return <Redirect to='/video_archive' />
+        }
+    }
+
     renderPrivacyPolicyRedirect = () => {
         if (this.state.redirectPrivacy) {
           return <Redirect to='/privacy_policy' />
+        }
+    }
+
+    renderVideoUploadRedirect = () => {
+        if (this.state.redirectUpload) {
+          return <Redirect to='/video_upload' />
         }
     }
 
@@ -81,12 +118,14 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseProfile}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a>
+                                {this.renderSubscriptionsRedirect()}
+                                <a onClick={() => this.setRedirect("redirectSubscriptions")}>
                                     <FaRegCreditCard className="mr-4"/>Subscriptions
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a>
+                                {this.renderAcountSettingsRedirect()}
+                                <a onClick={() => this.setRedirect("redirectAccountSettings")}>
                                     <FaUserEdit className="mr-4"/>Account Settings
                                 </a>
                             </li>
@@ -126,12 +165,14 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseVideos}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a>
+                                {this.renderVideoUploadRedirect()}
+                                <a onClick={() => this.setRedirect("redirectUpload")}>
                                     <FaUpload className="mr-4"/> Upload Video
                                 </a>
                             </li>
                             <li className="my-2">
-                                <a>
+                                {this.renderVideoArchiveRedirect()}
+                                <a onClick={() => this.setRedirect("redirectArchive")}>
                                     <FaArchive className="mr-4"/> Video Archive
                                 </a>
                             </li>
@@ -151,7 +192,8 @@ class Sidebar extends Component {
                     <Collapse isOpen={this.state.collapseSporSight}>
                         <ul style={{listStyle: "none"}}>
                             <li className="my-2">
-                                <a>
+                                {this.renderAboutUsRedirect()}
+                                <a onClick={() => this.setRedirect("redirectAboutUs")}>
                                     <FaInfoCircle className="mr-4"/> About Us
                                 </a>
                             </li>

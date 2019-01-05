@@ -15,7 +15,7 @@ class Roster extends Component {
                         <Sidebar />
                     </div>
                     <div class="col offset-md-2 displayArea">
-                        <img class="rosterImage" />
+                        <h2>Team Roster</h2>
                     </div>
                 </Row>
             </div>

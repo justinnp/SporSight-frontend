@@ -43,6 +43,7 @@ class VideoUpload extends Component {
                         allowMultiple={true} 
                         name={"files"}
                         server="http://localhost:3001/upload"
+                        max={3}
                         oninit={() => this.handleInit()}
                         onupdatefiles={(fileItems) => {
                             this.setState({

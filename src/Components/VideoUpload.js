@@ -41,8 +41,7 @@ class VideoUpload extends Component {
                     <FilePond
                         ref={ref => this.pond = ref} 
                         allowMultiple={true} 
-                        name={"files"}
-                        server="http://localhost:3001/upload"
+                        server="http://localhost:3001/api/video_upload"
                         max={3}
                         oninit={() => this.handleInit()}
                         onupdatefiles={(fileItems) => {

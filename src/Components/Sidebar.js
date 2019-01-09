@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Button, Collapse} from 'reactstrap';
 import {FaCaretDown, FaUserEdit, FaFutbol, FaRegCreditCard, FaUser, FaUpload, FaVideo, FaClipboardList, FaArchive, FaHome, FaUsers, FaInfoCircle, FaRegComment, FaRegCopyright} from 'react-icons/fa';
 import {Redirect} from 'react-router-dom';
-import '../CSS/sidebar.css';
+import '../CSS/styles.css';
 
 class Sidebar extends Component {
     constructor(props){

@@ -16,7 +16,6 @@ class Home extends Component {
               </div>
               <div class="col offset-md-2 displayArea">
                 <h1 className="mb-4">Welcome, Coach Justin!</h1>
-                <h4>2018 Schedule</h4>
               </div>
           </Row>
       </div>

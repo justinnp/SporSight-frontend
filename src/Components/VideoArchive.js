@@ -27,7 +27,7 @@ class VideoArchive extends Component {
   }
 
   fetchVideo(param) {
-    fetch(url + `/api/video_archive/${param}`)
+    fetch(url + `/videos/video_archive/${param}`)
       .then(response => response.json())
       .then(data => {
         console.log(data.sasUrl);

@@ -38,7 +38,7 @@ class Landing extends Component {
                     </ModalBody>
                     <ModalFooter>
                         <a href="/login/?p=B2C_1_login" class="btn btn-outline-primary mr-2" role="button">Login</a>
-                        <a href="/login/?p=B2C_1_register">Create an Account</a>
+                        <a href="https://sporsightiam.b2clogin.com/sporsightiam.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1_register&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fopenid%2Freturn&response_type=code%20id_token&response_mode=form_post&client_id=7b66c778-b9c6-4e73-acf6-d26a969978be&state=CUSTOM0O6Zo_pknfMKKEZa1OEEmVOwu4UilTlAmy_state&nonce=M1Lj3o8PvQ5EWMOF67m0QA32pxG2gVLa&scope=offline_access%20openid&x-client-SKU=passport-azure-ad&x-client-Ver=3.0.12">Create an Account</a>
                     </ModalFooter>
                 </Modal>
             </div>

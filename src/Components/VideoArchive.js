@@ -37,7 +37,7 @@ class VideoArchive extends Component {
         });
       })
       .catch(error => {
-        console.log("Error in retrieving video", error);
+        console.log("Error in retrieving the video", error);
       });
   }
 

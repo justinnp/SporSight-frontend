@@ -10,6 +10,7 @@ import VideoArchive from './Components/VideoArchive';
 import AboutUs from './Components/AboutUs';
 import Subscriptions from './Components/Subscriptions';
 import AccountSettings from './Components/AccountSettings';
+import ErrorView from './Components/ErrorView';
 //test
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/about_us" component={AboutUs} />
         <Route path="/subscriptions" component={Subscriptions} />
         <Route path="/account_settings" component={AccountSettings} />
+        <Route path="/error" component={ErrorView} />
       </Switch>
     </BrowserRouter>
   )
